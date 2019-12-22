@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+            <title>FigmentaNova - Promo Codes for Cube Terrain 3D</title>
+        
+        <link rel="stylesheet" type="text/css" href="../../css/syntax.css">
+        <link rel="stylesheet" type="text/css" href="../../css/style.css">
+        <link rel="icon" href="../../images/favicon128.png" type="image/png">
+    </head>
+    <body>
+        <div id="header">
+            <div id="logo">
+                <a href="../../">FigmentaNova</a>
+            </div>
+            <div class="nav">
+    
+        <a href="../../">Home</a>
+    
+
+    
+        <a href="../../archive/">Archive</a>
+    
+
+    
+        <a href="../../about/">About</a>
+    
+</div>
+
+            <div style="clear:both"></div>
+        </div>
+
+        <div id="content">
+            <h1>Promo Codes for Cube Terrain 3D</h1>
+            <p>I’m giving away unlock codes for my <a href="https://play.google.com/store/apps/details?id=com.figmentanova.wp1">Cube Terrain 3D</a>, my Minecraft-inspired live wallpaper…</p>
+<div id="codes">
+<button id="getcode">
+Click for a code
+</button>
+<div id="output" style="display: none">
+<p>
+Here’s your code: <strong>{code}</strong>
+</p>
+<p>
+If you’re on your Android device, you can <a href="https://play.google.com/redeem?code={code}">redeem this code directly on Google Play</a>. Alternatively, open the Redeem section in the Google Play app or website and enter the code when prompted.
+</p>
+<p>
+Once you’ve redeemed the code, all app features will be unlocked.
+</p>
+</div>
+<div id="allgone" style="display: none">
+<p>
+Apologies. All of the unlock codes have now been taken.
+</p>
+</div>
+</div>
+<script>
+    (function() {
+        var div = document.getElementById("codes");
+        var button = document.getElementById("getcode");
+        button.addEventListener("click", function() {
+            showPending();
+            setTimeout(requestCode, 1000);
+        })
+
+        function showPending() {
+            div.classList.add("pending");
+            button.innerText = "...";
+            button.disabled = true;
+        }
+
+        function showComplete(code) {
+            div.classList.remove("pending");
+            div.removeChild(button);
+            var output = document.getElementById("output");
+            output.innerHTML = output.innerHTML.replace(/\{code\}/g, code);
+            output.style.display = "block";
+        }
+
+        function showNoCodesFound() {
+            div.classList.remove("pending");
+            div.removeChild(button);
+            document.getElementById("allgone").style.display = "block";
+        }
+
+        function requestCode() {
+            var xhr = new XMLHttpRequest();
+            xhr.onload = onLoad;
+            xhr.open(
+                "GET", 
+                "/cgi-bin/promo_codes.py?packageId=com.figmentanova.wp1&promoId=3002403",
+                true);
+            xhr.send();
+
+            function onLoad() {
+                if (xhr.status === 200) {
+                    var code = xhr.responseText.trim();
+                    if (code !== "") {
+                        showComplete(code);
+                    }
+                    else {
+                        showNoCodesFound();
+                    }
+                }
+                else {
+                    showNoCodesFound();
+                }
+            }
+        }
+
+    })();
+</script>
+<div class="widevideo">
+<iframe src="https://www.youtube.com/embed/PbD6AR-Yxbs?rel=0" frameborder="0" allowfullscreen>
+</iframe>
+</div>
+        </div>
+        <div id="footer">
+            <div class="nav">
+    
+        <a href="../../">Home</a>
+    
+
+    
+        <a href="../../archive/">Archive</a>
+    
+
+    
+        <a href="../../about/">About</a>
+    
+</div>
+
+        </div>
+    </body>
+</html>
